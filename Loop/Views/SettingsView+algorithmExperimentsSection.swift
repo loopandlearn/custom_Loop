@@ -81,9 +81,10 @@ public struct ExperimentsSettingsView: View {
                         name: NSLocalizedString("Negative Insulin Damper", comment: "Title of negative insulin damper experiment"),
                         enabled: isNegativeInsulinDamperEnabled)
                 }
-                NavigationLink(destination: AutoBolusCarbsSelectionView(isAutoBolusCarbsEnabled: $isAutoBolusCarbsEnabled,  autoBolusCarbsActiveByDefault: $autoBolusCarbsActiveByDefault)) {
+                NavigationLink(destination: AutoBolusCarbsSelectionView(isAutoBolusCarbsEnabled: $isAutoBolusCarbsEnabled, autoBolusCarbsActiveByDefault: $autoBolusCarbsActiveByDefault)) {
                     ExperimentRow(
-                        name: NSLocalizedString("Auto-Bolus Carbs", comment: "Title of auto-bolus carbs experiment"),  enabled: isAutoBolusCarbsEnabled)
+                        name: NSLocalizedString("Auto-Bolus Carbs", comment: "Title of auto-bolus carbs experiment"),
+                        enabled: isAutoBolusCarbsEnabled)
                 }
                 Spacer()
             }
@@ -111,7 +112,6 @@ public struct ExperimentsSettingsView: View {
 extension Notification.Name {
     static let AlgorithmExperimentsChanged = Notification.Name(rawValue:  "com.loopKit.notification.AlgorithmExperimentsChanged")
 }
-
 
 extension UserDefaults {
     fileprivate enum Key: String {
